@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-
 import ButtonFloatDocumentation from "~/components/button/button-float-documentation";
 import SidebarFullwidth from "~/components/layouts/sidebar-fullwidth";
 import Link from "~/components/link";
@@ -9,17 +8,11 @@ import { metaTxbuilderGovernance } from "~/data/links-txbuilders";
 import { Intro } from "../common";
 import GovernanceDeregistration from "./deregistration";
 import GovernanceRegistration from "./registration";
-import GovernanceVoteDelegation from "./vote-delegation";
-import GovernanceVote from "./vote";
-
 const ReactPage: NextPage = () => {
   const sidebarItems = [
     { label: "DRep Registration", to: "registration" },
     { label: "DRep Deregistration", to: "deregistration" },
-    { label: "Vote Delegation", to: "delegation" },
-    { label: "Vote", to: "vote" },
   ];
-
   return (
     <>
       <Metatags
@@ -39,6 +32,15 @@ const ReactPage: NextPage = () => {
             community to vote on proposals and protocol updates. This system is
             designed to be decentralized and transparent, allowing the community
             to have a say in the future of the network.
+            The implementation of {" "}
+            <Link href="https://cips.cardano.org/cip/cip-1694">CIP-1694 | A 
+            First Step Towards On-Chain Decentralized Governance</Link> within
+            the Conway ledger era is Cardano's initial on-chain governance
+            design. This system was allows the community to vote on how the
+            chain is managed, such as how treasury funds are spent and changes
+            to protocol parameters. This system is designed to be decentralized
+            and transparent, allowing the community to decide the future of the
+            network.
           </p>
           <Intro />
           <p>
@@ -46,15 +48,11 @@ const ReactPage: NextPage = () => {
             the Mesh SDK.
           </p>
         </TitleIconDescriptionBody>
-        <ButtonFloatDocumentation href="https://docs.meshjs.dev/transactions/classes/MeshTxBuilder" />
-
+        <ButtonFloatDocumentation href="https://docs.meshjs.dev/transactions/classes/Transaction" />
         <GovernanceRegistration />
         <GovernanceDeregistration />
-        <GovernanceVoteDelegation />
-        <GovernanceVote />
       </SidebarFullwidth>
     </>
   );
 };
-
 export default ReactPage;
