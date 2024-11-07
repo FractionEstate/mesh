@@ -36,6 +36,7 @@
     "scripts/*"
   ],
   "dependencies": {
+    "@meshsdk/core": "^1.7.12",
     "install": "^0.13.0",
     "npm": "^10.8.0"
   }
